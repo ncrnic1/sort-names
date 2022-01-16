@@ -7,10 +7,19 @@ Then, it creates a file containing the sorted order.
 
 Download, and extract wherever you would like.
 
+# Dependencies
+
+Java Development Kit (JDK) 17.0.1 recommended, if wanting to compile and run via command prompt.
+
 # Usage
 
-- Put input text files into src/test-files
+The instructions below refer to:
+<extract-location>: where you extracted this repository to
+<input-file>: the full file path of the input text file you want the program to process
+
 - Open command prompt
-- Navigate to the project directory and type "javac sort-names <file-name>"
-- Replace <file-name> with the name of the input file (e.g., "1-test.txt") without the quotation marks
-- The output file will be created in src/test-files under the name "<file-name>-sorted.txt"
+- Navigate to <extract-location>\sort-names-main\sort-names\src\main
+- Type "javac *.java"
+- Type "cd .."
+- To run, type "java main/Main <input-file>.txt"
+- The output file will be created in the same directory as the output file, with the name "<input-file>-sorted.txt"
