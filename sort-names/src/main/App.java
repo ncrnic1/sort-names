@@ -4,7 +4,6 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
-import java.nio.file.FileSystems;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -14,10 +13,9 @@ public class App {
 	private static String outputFilePath;
 	private static File inputFile;
 	private static List<Name> names = new ArrayList<Name>();
-	private static String root = FileSystems.getDefault().getPath("").toAbsolutePath().toString();
 	
 	public static void run(String[] args) throws FileNotFoundException, UnsupportedEncodingException, InvalidLineInFileException {
-		outputFilePath = replaceExtension(root.toString() + "\\src\\test-files\\" + args[0], "-sorted.txt");
+		outputFilePath = replaceExtension(args[0], "-sorted.txt");
 		
 		readFile(args[0]);
 		writeFile(args[0]);
@@ -30,7 +28,7 @@ public class App {
 	}
 	
 	private static void readFile(String filePath) throws FileNotFoundException, InvalidLineInFileException {
-		inputFile = new File(root.toString() + "\\src\\test-files\\" + filePath);
+		inputFile = new File(filePath);
 		try (Scanner file = new Scanner(inputFile)) {
 			while (file.hasNextLine()) {
 				String line = file.nextLine();

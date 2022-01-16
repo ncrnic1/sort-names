@@ -16,6 +16,7 @@ import main.InvalidLineInFileException;
 
 public class IntegrationTest {
 	static Path root = FileSystems.getDefault().getPath("").toAbsolutePath();
+	static String dir = root.toString() + "\\src\\test-files\\";
 	
 	@SuppressWarnings("deprecation")
 	ExpectedException exception = ExpectedException.none();
@@ -25,7 +26,7 @@ public class IntegrationTest {
 		String file1 = "1-test", file2 = "1-result";
 		
 		Path file2Path = getPath(file2);
-		String[] args = {file1 + ".txt"};
+		String[] args = {dir + file1 + ".txt"};
 		App.run(args);
 		
 		assertEquals(true, sameContent(file2Path, getPath(file1 + "-sorted")));
@@ -36,7 +37,7 @@ public class IntegrationTest {
 		String file1 = "2-test", file2 = "2-result";
 		
 		Path file2Path = getPath(file2);
-		String[] args = {file1 + ".txt"};
+		String[] args = {dir + file1 + ".txt"};
 		App.run(args);
 		
 		assertEquals(true, sameContent(file2Path, getPath(file1 + "-sorted")));
@@ -47,7 +48,7 @@ public class IntegrationTest {
 		String file1 = "3-test", file2 = "3-result";
 		
 		Path file2Path = getPath(file2);
-		String[] args = {file1 + ".txt"};
+		String[] args = {dir + file1 + ".txt"};
 		App.run(args);
 		
 		assertEquals(true, sameContent(file2Path, getPath(file1 + "-sorted")));
@@ -58,7 +59,7 @@ public class IntegrationTest {
 		String file1 = "4-test", file2 = "4-result";
 		
 		Path file2Path = getPath(file2);
-		String[] args = {file1 + ".txt"};
+		String[] args = {dir + file1 + ".txt"};
 		App.run(args);
 		
 		assertEquals(true, sameContent(file2Path, getPath(file1 + "-sorted")));
