@@ -24,3 +24,17 @@ The instructions below refer to:
 - Type "cd .."  
 - To run, type "java main/Main \<input-file>.txt"  
 - The output file will be created in the same directory as the output file, with the name "\<input-file>-sorted.txt"  
+
+Alternatively, if preferring to run via an IDE:  
+- Open the project inside the IDE  
+- Set the run configuration to have the desired input file path  
+- Run Main  
+
+# Testing
+
+It is recommended that unit and integration tests be conducted through an IDE:  
+
+- Open the project inside the IDE  
+- Run either UnitTest or IntegrationTest to see the results  
+
+IntegrationTest uses the test-files folder in the project directory. Input and expected output files can be put there, and then new tests can be created comparing the expected output to the actual output.  
